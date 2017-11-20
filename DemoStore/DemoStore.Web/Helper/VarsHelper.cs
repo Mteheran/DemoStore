@@ -1,8 +1,4 @@
 ﻿using DemoStore.Web.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace DemoStore.Web.Helper
 {

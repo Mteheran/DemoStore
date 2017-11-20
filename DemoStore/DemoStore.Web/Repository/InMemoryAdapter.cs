@@ -1,8 +1,5 @@
 ﻿using Glav.CacheAdapter.Core.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace DemoStore.Web.Repository
 {

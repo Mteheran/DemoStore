@@ -1,6 +1,5 @@
 ﻿#region Using Statements
 using System;
-using Glav.CacheAdapter.Core.DependencyInjection;
 
 #endregion
 

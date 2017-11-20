@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace DemoStore.Web.Enums
+﻿namespace DemoStore.Web.Enums
 {
     public enum ModeType
     {

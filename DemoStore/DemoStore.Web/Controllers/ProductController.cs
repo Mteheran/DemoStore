@@ -1,10 +1,6 @@
 ﻿using DemoStore.Web.Models;
-using DemoStore.Web.Repository;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 
 namespace DemoStore.Web.Controllers
@@ -27,11 +23,6 @@ namespace DemoStore.Web.Controllers
             return View(await service.GetProducts());
         }
 
-        // GET: Product/Details/5
-        public async Task<ActionResult> Details(int id)
-        {
-            return View();
-        }
 
         // GET: Product/Create
         public async Task<ActionResult> Create()
@@ -58,49 +49,7 @@ namespace DemoStore.Web.Controllers
             }
         }
 
-        // GET: Product/Edit/5
-        public async Task<ActionResult> Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Product/Edit/5
-        [HttpPost]
-        public async Task<ActionResult> Edit(Product product)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Product/Delete/5
-        public ActionResult Delete()
-        {
-            return View();
-        }
-
-        // POST: Product/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+    
 
         private async Task LoadDropDownLists()
         {
