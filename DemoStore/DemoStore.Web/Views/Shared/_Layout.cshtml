@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -18,10 +19,21 @@
                 </button>
                 @Html.ActionLink("Store", "Index", "Product", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Product", "Index", "Product")</li>
-                </ul>
+            <div class="navbar-collapse collapse">    
+                <form action="Home/ChangeType" method="post">
+                    <select id="typeid" name="typeid">
+                        @if (DemoStore.Web.Helper.VarsHelper.GetDataMode() == DemoStore.Web.Enums.ModeType.SQLData)
+                        {
+                        <option value="SQLData" selected="selected" >SQL Data</option>
+                        <option value="InMemory">In Memory</option>
+                        }
+                        else if (DemoStore.Web.Helper.VarsHelper.GetDataMode() == DemoStore.Web.Enums.ModeType.InMemory)
+                        {
+                            <option value="SQLData" >SQL Data</option>
+                            <option value="InMemory" selected="selected">In Memory</option>
+                        }
+                    </select>
+                </form>
             </div>
         </div>
     </div>
@@ -36,5 +48,10 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        $("#typeid").change(function() {
+    $(this).parents("form").submit();
+    });
+    </script>
 </body>
 </html>
